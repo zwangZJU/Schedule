@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body background="/static/show_schedule/img/bg_mm_1.jpg">
+
+    <div id="Layer1" style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
+        <img src="/static/show_schedule/img/bg_mm_{{week.number}}.jpg" width="100%" height="100%"/>
+    </div>
+    <h1 style="color:pink"><center>第{{week.number}}周工作安排</center></h1>
+    <h3 style="color:pink"><center>{{week.start_date | date:"Y年m月d日"}}  ——  {{week.end_date | date:"Y年m月d日"}}</center></h3>
+    <table cellpadding="10" cellspacing="10" align="center" style="color:black" background="/static/show_schedule/img/alpha.png" >
+        <tr>
+            <th><font size="4" face="Microsoft YaHei"> 组员</font></th>
+            <th><font size="4" face="Microsoft YaHei">工作内容</font></th>
+            <th><font size="4" face="Microsoft YaHei">完成情况</font></th>
+        </tr>
+        {%for plan in plans%}
+        <tr>
+
+            <td align="center" width="100"><font size="4" face="Microsoft YaHei">{{plan.member_name}}</font></td>
+
+            <td width="500"><font size="4" face="Microsoft YaHei">{{plan.work_content|safe}}</font></td>
+
+            <td align="center" width="100"><font size="4" face="Microsoft YaHei">{{plan.is_achievement}}</font></td>
+        </tr>
+        {%endfor%}
+
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>周次</title>
+</head>
+<body>
+    <div id="Layer1" style="position:fixed;z-index:-100; left:0px; top:0px; width:100%; height:100%">
+        <img src="/static/show_schedule/img/bg_week_home.png" width="100%" height="100%"/>
+    </div>
+    <h1><font color="white">周次列表</font></h1>
+    <ul>
+        {%for week in weeks%}
+        <li>
+            <a href="{{ week.number }}"><h3><font color="white">第{{week.number}}周计划</font></h3></a>
+        </li>
+        {%endfor%}
+    </ul>
+ <h2 style="font-family:STKaiti;position:fixed; bottom:50px; left:50px;"><font color="white">Note :<br>1.目前的工作抽空完成即可，不要影响正常的学习<br>2.如果完成了工作，记得跟我说一声,我会更新每个人每周的完成情况<br>3.之后的任务我将不再提醒，周四早上自行查看<br><br>附：本周给云平台同学的参考资料<a color="red" href="https://pan.baidu.com/s/1O-5TxlK9UiqyAjq2Sa3kYQ">https://pan.baidu.com/s/1O-5TxlK9UiqyAjq2Sa3kYQ</a> 密码：13dd</font></h2>
+ 
+</body>
+</html>
